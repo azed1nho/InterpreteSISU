@@ -34,7 +34,8 @@ st.header("Como usar o site")
 
 st.markdown(f'<p class="big-font">{text_welcome}</p>', unsafe_allow_html=True)
 
-st.info("A base de dados está aqui: https://sisu.mec.gov.br/#/relatorio#onepage")
+st.info("A base de dados utilizada pode ser encontrada aqui: https:"
+        "//sisu.mec.gov.br/#/relatorio#onepage")
 
 st.header("Como usar o site")
 st.markdown(f'<p class="big-font">{text_help}</p>', unsafe_allow_html=True)

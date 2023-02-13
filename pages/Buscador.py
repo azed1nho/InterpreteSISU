@@ -12,12 +12,15 @@ df = pd.read_excel(FILEPATH, sheet_name="inscricao_2022_1",
 st.set_page_config(layout="wide")
 st.header("IntépreteSISU")
 
-opcoes = bk.get_cursos(df)
+cursos = bk.get_cursos(df)
+universidades = bk.get_universidades(df)
 
-curso = st.selectbox(label="Selecione um curso.", options=opcoes)
+curso = st.selectbox(label="Selecione um curso.", options=cursos)
+universidade = st.selectbox(label="Selecione uma faculdade.",
+                            options=universidades)
 
-if curso:
+if curso is not "Ex.: UFES":
     st.subheader("Suas opções:")
-    resultados = bk.get_possibilidades(df, curso)
+    resultados = bk.get_possibilidades(df, curso, universidade)
 
     st.dataframe(data=resultados)
