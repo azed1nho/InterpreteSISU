@@ -19,8 +19,9 @@ curso = st.selectbox(label="Selecione um curso.", options=cursos)
 universidade = st.selectbox(label="Selecione uma faculdade.",
                             options=universidades)
 
-if curso is not "Ex.: UFES":
-    st.subheader("Suas opções:")
-    resultados = bk.get_possibilidades(df, curso, universidade)
 
+st.subheader("Suas opções:")
+resultados = bk.get_possibilidades(df, curso, universidade)
+
+if resultados is not None:
     st.dataframe(data=resultados)
